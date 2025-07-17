@@ -1,4 +1,4 @@
-import userModel from "../models/user.model";
+import userModel from "../models/user.model.js";
 
 export async function findUser(query) {
     return await userModel.findOne(query);

@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
         trim: true,
     },
 
-    avatar: {
+    dp: {
         type: String,
         default: "https://img.favpng.com/21/13/5/user-profile-default-computer-icons-network-video-recorder-png-favpng-7dPZA8WRdY80Uw3bdMWkEN4fR.jpg",  
         trim: true,   
@@ -35,6 +35,6 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-const userModel = mongoose.model("User", userSchema);
+const userModel = mongoose.model("users", userSchema);
 
 export default userModel;
