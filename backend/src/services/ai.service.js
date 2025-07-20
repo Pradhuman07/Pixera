@@ -5,13 +5,15 @@ const ai = new GoogleGenAI({
     apiKey: config.GEMINI_API_KEY,
 });
 
+
 export async function generateCaption(file) {
 
     const base64Image = new Buffer.from(file.buffer).toString('base64');
+
     const contents = [
         {
             inlineData: {
-                mimeType:file.mimeType,
+                mimeType: file.mimeType,
                 data: base64Image,
             },
         },
@@ -24,5 +26,6 @@ export async function generateCaption(file) {
     });
 
     return response.text
-
 }
+
+// console.log(await generateCaption());
