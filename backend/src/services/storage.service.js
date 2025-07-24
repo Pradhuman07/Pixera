@@ -7,7 +7,7 @@ var imagekit = new ImageKit({
     urlEndpoint: config.IMAGEKIT_URL_ENDPOINT
 });
 
-export async function uploadFile(file, filename) {
+export async function uploadFileOnImageKit(file, filename) {
     return new Promise((resolve, reject) => {
 
         imagekit.upload(
