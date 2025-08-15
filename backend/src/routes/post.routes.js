@@ -1,7 +1,7 @@
 import express from "express";
 import { authMiddleware } from "../middlewares/auth.middleware.js";
-import { createPostController, getPostController, createCommentController } from "../controllers/post.controller.js";
-import { getPostsValidator, createCommentValidator } from "../middlewares/validator.middleware.js";
+import { createPostController, getPostController, createCommentController, createLikeController } from "../controllers/post.controller.js";
+import { getPostsValidator, createCommentValidator, createLikeValidator } from "../middlewares/validator.middleware.js";
 import multer from "multer"; 
 
 // About multer:
@@ -32,6 +32,12 @@ router.post('/comment',
     createCommentValidator,
     authMiddleware,
     createCommentController
+)
+
+router.post('/like',
+    createLikeValidator,
+    authMiddleware,
+    createLikeController
 )
 
 export default router;
